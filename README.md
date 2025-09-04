@@ -1,6 +1,3 @@
-# Android-Bugbounty-Lab
-An educational Android bug bounty lab simulating real-world fintech app vulnerabilities.
-
 # Android Bug Bounty Labs
 
 Welcome to **Android Bug Bounty Labs**, a collection of realistic, hands-on Android security labs designed for educational purposes.
