@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.quickpay.app"
+    android:versionCode="21"
+    android:versionName="2.1.0">
+    
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="QuickPay"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:label="QuickPay"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Payment Activity -->
+        <activity
+            android:name=".payments.PaymentActivity"
+            android:label="Process Payment"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.quickpay.action.PAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- VUL-004: Exported BroadcastReceiver for Transactions -->
+        <receiver
+            android:name=".receivers.TransactionReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.quickpay.PROCESS_PAYMENT" />
+                <action android:name="com.quickpay.REFUND_PAYMENT" />
+                <action android:name="com.quickpay.CHECK_BALANCE" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- Exported Content Provider -->
+        <provider
+            android:name=".providers.TransactionProvider"
+            android:authorities="com.quickpay.app.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        
+        <!-- Debug Service (shouldn't be in production) -->
+        <service
+            android:name=".services.DebugService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.quickpay.debug.DUMP_DATA" />
+            </intent-filter>
+        </service>
+        
+        <!-- File Provider for sharing -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.quickpay.app.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        
+        <!-- Backup Agent (exposes data) -->
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAITq5FQt7XPrgqGvH8n_QuickPayBackupKey" />
+    </application>
+    
+</manifest>
