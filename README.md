@@ -41,7 +41,16 @@ Welcome to **Android Bug Bounty Labs**, a collection of realistic, hands-on Andr
 
 ---
 
----
+## 💡 Additional Training
+
+We also offer a **recorded Android Bug Bounty course** for ₹5,000, covering:
+
+- Advanced Android app security techniques  
+- Real-life bug bounty case studies  
+- Step-by-step hands-on labs  
+
+Enrollment :  here(https://api.whatsapp.com/send/?phone=%2B918529240054&text=I+want+to+join+the+Android+Bug+Bounty)
+
 
 ## 👩‍💻 Author / Lab Creator
 
