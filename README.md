@@ -49,7 +49,7 @@ We also offer a **recorded Android Bug Bounty course** for ₹5,000, covering:
 - Real-life bug bounty case studies  
 - Step-by-step hands-on labs  
 
-Enrollment :  here(https://api.whatsapp.com/send/?phone=%2B918529240054&text=I+want+to+join+the+Android+Bug+Bounty)
+Enrollment :  [here](https://api.whatsapp.com/send/?phone=%2B918529240054&text=I+want+to+join+the+Android+Bug+Bounty)
 
 
 ## 👩‍💻 Author / Lab Creator
