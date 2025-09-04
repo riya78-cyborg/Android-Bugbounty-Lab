@@ -33,7 +33,7 @@ Welcome to the **QuickPay Lab**, part of the Android Bug Bounty Labs collection.
 
 ## 📖 How to Use
 
-1. Open `quickpay-lab-html.html` to read the scenario, objectives, and hints.  
+1. Download and open in browser `quickpay-lab-html.html` to read the scenario, objectives, and hints.  
 2. Analyze `quickpay-vulnerable-app.java` or compiled APK.  
 3. Use provided scripts and payloads for testing.  
 4. Attempt to find vulnerabilities listed in the HTML lab.  
